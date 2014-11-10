@@ -1,0 +1,37 @@
+body {
+  background-color: #f0f0f0;
+}
+
+/**
+ * Login Module
+ */
+div#login-wrapper {
+  position: fixed;
+  height: 50%;
+  width: 100%;
+}
+div#login {
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  text-align: center;
+  width: 350px;
+  height: 290px;
+  border: 5px solid #333333;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+div#login h1 {
+  margin-bottom: 30px;
+}
+input.login-button {
+  font-size: 18px;
+  height: 40px;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+small#login-footer {
+  position: relative;
+  top: 10px;
+}

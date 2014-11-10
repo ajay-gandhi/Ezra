@@ -9,7 +9,7 @@ module.exports = (function () {
     this.browser = new zombie();
   }
 
-  StudentCenter.prototype.init = function (netid, password) {
+  StudentCenter.prototype.login = function (netid, password) {
     var self = this;
     var browser = self.browser;
 
