@@ -23,6 +23,7 @@ module.exports = (function () {
           // Fill in NetID and pw
           browser.fill('netid', netid);
           browser.fill('password', password);
+          browser.select('realm', 'CIT.CORNELL.EDU');
 
           browser.pressButton('Submit', function () {
             if (browser.text('title') === 'Student Center') {
@@ -30,7 +31,7 @@ module.exports = (function () {
               resolve(self);
             } else {
               // Login failed
-              reject(browser.text('title'));
+              reject('Stuck at: ' + browser.text('title'));
             }
           });
 
