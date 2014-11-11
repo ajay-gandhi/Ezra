@@ -2,6 +2,7 @@ var express      = require('express'),
     bodyParser   = require('body-parser'),
     cookieParser = require('cookie-parser'),
     Promise      = require('es6-promise').Promise,
+    chalk        = require('chalk'),
     crypt        = require('./crypt.js'),
     sc_module    = require('./studentcenter');
 
@@ -32,6 +33,7 @@ app.post('/login', function (req, res) {
 
   if (students[netid]) {
     update_timeout(netid);
+    console.log('\n', chalk.green('Re-logged in ' + netid))
     res.send('true');
   }
 
@@ -42,6 +44,7 @@ app.post('/login', function (req, res) {
       students[netid] = StudentCenter;
       // Update the timeout that deletes that student's browser (logout)
       update_timeout(netid);
+      console.log('\n', chalk.blue('First login for ' + netid))
       res.send('true');
     })
     .catch(function () {
@@ -76,6 +79,7 @@ var update_timeout = function (netid) {
   var t = setTimeout(function () {
     delete students[netid];
     delete timeouts[netid];
+    console.log('\n', chalk.red('Deleted StudentCenter for ' + netid))
   }, login_expiration_time);
 
   timeouts[netid] = t;

@@ -69,7 +69,7 @@ var login_result = function (successful, callback) {
     .css({
       backgroundColor: (successful) ? '#00FF00' : '#FF0000',
       top: ($('div#login').height() - $('div#login-result').height()) / 2,
-      left: '-' + $('div#login-result').width() / 2
+      left: '-125px'
     })
     .animate({
       left: (($('div#login').width() - $('div#login-result').width()) / 2) + 15
