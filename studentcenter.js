@@ -18,7 +18,6 @@ module.exports = (function () {
       browser.visit(student_center_url).then(function () {
         // Wait for all ze redirects
         browser.wait().then(function () {
-          console.log('Currently at: ', browser.text('title'));
 
           // Fill in NetID and pw
           browser.fill('netid', netid);
