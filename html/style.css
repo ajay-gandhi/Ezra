@@ -64,6 +64,38 @@ div#login-result {
 }
 
 /**
+ * Terms of Use
+ */
+div#tou-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+div#terms-of-use {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -225px;
+  margin-left: -175px;
+  width: 350px;
+  height: 450px;
+  border: 5px solid #333333;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.4em;
+}
+div#tou-content {
+  width: 320px;
+  height: 420px;
+  overflow: auto;
+}
+
+/**
  * Module system for home page
  */
 header#home {
@@ -72,4 +104,17 @@ header#home {
   left: 0px;
   width: 100%;
   height: 50px;
+  background-color: #333333;
+  color: #FFFFFF;
+  text-align: center;
+}
+header#home p.h1 {
+  margin: 3px;
+}
+div#modules {
+  margin-top: 50px;
+  border: 1px solid green;
+}
+div.module {
+
 }
