@@ -68,11 +68,11 @@ var login_result = function (successful, callback) {
     .html( (successful) ? '&check;' : '&#9587;' )
     .css({
       backgroundColor: (successful) ? '#00FF00' : '#FF0000',
-      top: '75px',
-      left: '-125px'
+      top: ($('div#login').height() - $('div#login-result').height()) / 2,
+      left: '-' + $('div#login-result').width() / 2
     })
     .animate({
-      left: '105px'
+      left: (($('div#login').width() - $('div#login-result').width()) / 2) + 15
     }, {
       duration: login_animation_duration,
       complete: function () {

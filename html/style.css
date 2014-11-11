@@ -15,7 +15,8 @@ div#login {
   top: 50%;
   margin: 0 auto;
   text-align: center;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   height: 290px;
   border: 5px solid #333333;
   border-radius: 20px;
