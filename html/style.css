@@ -8,15 +8,13 @@ body {
 div#login-wrapper {
   margin: 0;
   padding: 0;
-  position: fixed;
-  height: 50%;
-  width: 100%;
+  position: relative;
 }
 div#login {
-  position: relative;
+  position: absolute;
   top: 50%;
+  margin: -145px auto 0 auto;
   text-align: center;
-  margin-right: 15px;
   width: 100%;
   max-width: 350px;
   min-width: 300px;
