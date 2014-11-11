@@ -16,7 +16,7 @@ div#login {
   position: relative;
   top: 50%;
   text-align: center;
-  margin: 0 auto;
+  margin-right: 15px;
   width: 100%;
   max-width: 350px;
   min-width: 300px;
