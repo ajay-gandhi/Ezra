@@ -9,12 +9,10 @@ div#login-wrapper {
   position: fixed;
   height: 50%;
   width: 100%;
-  padding: 40px;
 }
 div#login {
   position: relative;
   top: 50%;
-  margin: 0 auto;
   text-align: center;
   width: 100%;
   max-width: 350px;
