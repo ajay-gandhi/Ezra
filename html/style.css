@@ -8,6 +8,7 @@ body {
 div#login-wrapper {
   position: fixed;
   height: 50%;
+  padding: 20px;
   width: 100%;
 }
 div#login {
@@ -58,4 +59,11 @@ div#login-result {
   width: 125px;
   height: 125px;
   border-radius: 20px;
+}
+
+/**
+ * Module system for home page
+ */
+header#home {
+
 }
