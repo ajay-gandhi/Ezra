@@ -34,7 +34,7 @@ $(document).ready(function () {
               duration: $(window).height() / 2,
               complete: function () {
                 // Open home.html
-                window.open('home.html', '_self');
+                window.open('index.html', '_self');
               }
             });
         });
