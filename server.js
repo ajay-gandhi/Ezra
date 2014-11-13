@@ -33,11 +33,8 @@ app.use(session({
   cookie: { maxAge: login_expiration_time }
 }));
 
-app.set('port', (process.env.PORT || 5000));
-
 // Authorize before visiting
 app.use(function (req, res, next) {
-  console.log(req.session);
   var s_netid = req.session.netid;
   if ((s_netid && students[s_netid]) || unauth_allowed.indexOf(req.path) != -1) {
     update_timeout(s_netid);
@@ -99,7 +96,7 @@ app.get('/courses', function (req, res) {
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 app.listen(server_port, server_ip_address, function() {
-  console.log('Server running on port ' + app.get('port'));
+  console.log('Server running on port ' + server_port);
 });
 
 
