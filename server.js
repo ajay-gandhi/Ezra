@@ -12,7 +12,11 @@ var students = {};
 var timeouts = {};
 var login_expiration_time = 300000; // 5 minutes
 // A list of URLs that can be accessed without logging in
-var unauth_allowed = ['/login.html', '/style.css', '/scripts/login.js', '/login'];
+var unauth_allowed = ['/login.html',
+                      '/terms-of-use.html',
+                      '/style.css',
+                      '/scripts/login.js',
+                      '/login'];
 
 // Enable POST requests
 app.use(bodyParser.json());
