@@ -96,7 +96,9 @@ app.get('/courses', function (req, res) {
 });
 
 // Start the server
-app.listen(app.get('port'), function() {
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+app.listen(server_port, server_ip_address, function() {
   console.log('Server running on port ' + app.get('port'));
 });
 
