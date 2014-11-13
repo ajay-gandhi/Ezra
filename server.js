@@ -1,16 +1,23 @@
 var express    = require('express'),
     bodyParser = require('body-parser'),
-    session    = require('express-session'),
+    session    = require('cookie-session'),
     Promise    = require('es6-promise').Promise,
     chalk      = require('chalk'),
     crypt      = require('./crypt.js'),
     sc_module  = require('./studentcenter');
+
+// This file contains the secret signature for the session cookies:
+// {
+//   "sessionSecret": "some unguessable string"
+// }
+var secret = require('./secret.json');
 
 var app = express();
 
 var students = {};
 var timeouts = {};
 var login_expiration_time = 300000; // 5 minutes
+
 // A list of URLs that can be accessed without logging in
 var unauth_allowed = ['/login.html',
                       '/terms-of-use.html',
@@ -26,11 +33,9 @@ app.use(bodyParser.urlencoded({
 
 // Enable sessions
 app.use(session({
-  secret: 'ezra-cornell',
-  resave: true,
-  saveUninitialized: true,
-  rolling: true,
-  cookie: { maxAge: login_expiration_time }
+  secret:   secret.sessionSecret,
+  maxAge:   login_expiration_time,
+  httpOnly: true
 }));
 
 // Authorize before visiting
